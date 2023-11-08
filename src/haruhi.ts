@@ -56,6 +56,7 @@ function printPick() {
 }
 
 if (flags.timer != null) {
+  printPick();
   setInterval(printPick, flags.timer);
 } else if (flags.volume != null) {
   const index = flags.volume - 1;
