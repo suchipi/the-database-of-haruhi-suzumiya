@@ -6,6 +6,7 @@ const { flags, args } = parseScriptArgs({
   volume: number,
   json: boolean,
   help: boolean,
+  clear: boolean,
   h: boolean,
 });
 
@@ -17,6 +18,7 @@ Options:
   --timer (number): print an entry once every n milliseconds
   --volume (number): print a specific volume (ie. book number)
   --json (boolean): output json
+  --clear (boolean): clear terminal between entries
 `.trim()
   );
   std.exit(0);
@@ -52,6 +54,9 @@ function printNoun(noun: string, index: number) {
 const nouns = loadNouns();
 function printPick() {
   const { value: noun, index } = pickRandom(nouns);
+  if (flags.clear) {
+    clear();
+  }
   printNoun(noun, index);
 }
 
