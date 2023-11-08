@@ -1,5 +1,5 @@
 #!/usr/bin/env yavascript
-import { loadNouns } from "./nouns";
+import { loadNouns } from "./utils";
 
 function shuffle(array: Array<any>) {
   let currentIndex = array.length,

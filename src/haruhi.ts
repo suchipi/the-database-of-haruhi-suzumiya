@@ -1,5 +1,5 @@
 #!/usr/bin/env yavascript
-import { loadNouns } from "./nouns";
+import { loadNouns, pickRandom, capitalize } from "./utils";
 
 const { flags, args } = parseScriptArgs({
   timer: number,
@@ -22,20 +22,6 @@ Options:
 `.trim()
   );
   std.exit(0);
-}
-
-function pickRandom<T>(array: Array<T>): { value: T; index: number } {
-  const index = Math.floor(Math.random() * array.length);
-  return { value: array[index], index };
-}
-
-function capitalize(str: string): string {
-  const words = str.split(/\s/g);
-  return words
-    .map((word) => {
-      return word[0].toUpperCase() + word.slice(1);
-    })
-    .join(" ");
 }
 
 function makeTitle(noun: string, nounIndex: number) {
