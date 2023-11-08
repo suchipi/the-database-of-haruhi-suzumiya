@@ -62,6 +62,7 @@ if (flags.timer != null) {
   const noun = nouns[index];
   if (!noun) {
     console.error(red("No such volume: " + flags.volume));
+    std.exit(1);
   } else {
     printNoun(noun, index);
   }
