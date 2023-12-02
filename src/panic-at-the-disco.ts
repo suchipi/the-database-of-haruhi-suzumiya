@@ -8,4 +8,4 @@ setInterval(() => {
   const noun2 = capitalize(pickRandom(nouns).value);
 
   echo(`${noun1}! At The ${noun2}`);
-}, 500);
+}, 1000);
