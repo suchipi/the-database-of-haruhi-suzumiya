@@ -28,7 +28,7 @@ const emotes = `
   :) :( :o :O :3 >:3 >:3c >:( >:) c: C: D:
   :-) :^) B) >.< uwu ._. :v >.> <.< >///<
   owo O.O o.o 0_0 <(^.^<) <(^.^)> (>^.^)>
-  :D T.T Q.Q orz :p :P xD XD
+  :D T.T Q.Q orz :p :P xD XD :< @.@ *-* oAo
 `
   .split(/\s+/)
   .filter(Boolean)
