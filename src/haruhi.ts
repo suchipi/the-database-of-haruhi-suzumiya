@@ -24,8 +24,22 @@ Options:
   std.exit(0);
 }
 
+const emotes = `
+  :) :( :o :O :3 >:3 >:3c >:( >:) c: C: D:
+  :-) :^) B) >.< uwu ._. :v >.> <.< >///<
+  owo O.O o.o 0_0 <(^.^<) <(^.^)> (>^.^)>
+  :D T.T Q.Q orz :p :P xD XD
+`
+  .split(/\s+/)
+  .filter(Boolean)
+  .concat("ayy lmao");
+
 function makeTitle(noun: string, nounIndex: number) {
-  return `Volume ${nounIndex + 1}: The ${capitalize(noun)} of Haruhi Suzumiya`;
+  const emote = pickRandom(emotes).value;
+
+  return `Volume ${nounIndex + 1}: The ${capitalize(
+    noun
+  )} of Haruhi Suzumiya ${emote}`;
 }
 
 function printNoun(noun: string, index: number) {
