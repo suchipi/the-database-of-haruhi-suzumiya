@@ -19,9 +19,9 @@ Options:
   --volume (number): print a specific volume (ie. book number)
   --json (boolean): output json
   --clear (boolean): clear terminal between entries
-`.trim()
+`.trim(),
   );
-  std.exit(0);
+  exit(0);
 }
 
 const emotes = `
@@ -38,7 +38,7 @@ function makeTitle(noun: string, nounIndex: number) {
   const emote = pickRandom(emotes).value;
 
   return `Volume ${nounIndex + 1}: The ${capitalize(
-    noun
+    noun,
   )} of Haruhi Suzumiya ${emote}`;
 }
 
@@ -68,7 +68,7 @@ if (flags.timer != null) {
   const noun = nouns[index];
   if (!noun) {
     console.error(red("No such volume: " + flags.volume));
-    std.exit(1);
+    exit(1);
   } else {
     printNoun(noun, index);
   }
